@@ -1,0 +1,67 @@
+<html>
+<head>
+
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+#deleters {
+	background-image: url('assets/turn.jpeg');
+	background-size: 100% 100%;
+	width: 100%;
+	height: 800px;
+	font-family: avenir;
+	text-align: center;
+
+
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	font-size: 48pt;
+}
+
+#button {
+	font-size: 42pt;
+	background: none;
+	border: none;
+	font-family: avenir;
+	color: white;
+}
+
+#please {
+	padding-top: 20%;
+}
+
+</style>
+</head>
+<body>
+<div id="bar" style="with:100%;">
+ 	Click below to delete records. You can add one here: <a href="/album"> create </a>. You can go home: <a href="/home"> delete </a>
+	</div>
+{{#each model.data as |music|}}
+<div id="deleters">
+<div id="please">
+{{#link-to 'delete.del' music.id}}
+
+		{{music.albumName}}
+		by
+		{{music.artistName}}
+	
+{{/link-to}}
+<br>
+<br>
+<button id="button" {{action 'deleteArtist' music.id}} value=id class="button">
+<br>
+Delete Album 
+</button>
+
+</div>
+</div>
+{{/each}}
+
+</body>
+</html>
+	{{outlet}}

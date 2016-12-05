@@ -1,0 +1,13 @@
+
+{{outlet}}
+
+this is {{model.id}} !
+
+<form onsubmit={{action 'deleteThem'}}>
+
+Song: {{input type="hidden" value=model.id}}
+<br>
+
+<button type="submit"> Create album </button>
+
+</form>

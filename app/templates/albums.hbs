@@ -1,0 +1,86 @@
+ 
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+body {
+	
+}
+#left {
+	background-image: url('assets/shop.jpg');
+	color:white;
+	font-family: futura;
+	font-size: 48pt;
+	text-align: center;
+	height: 100vh;
+	opacity: .5;
+	
+}
+
+#middle {
+	background-image: url('assets/shop.jpg');
+	background-height: 120%;
+	color:white;
+	font-family: futura;
+	font-size: 48pt;
+	text-align: center;
+	opacity: .5;
+
+}
+
+#right {
+	background-image: url('assets/vintage.jpg');
+	background-height: 120%;
+	color:white;
+	font-family: futura;
+	font-size: 48pt;
+	text-align: center;
+	height:100vh;
+	opacity: .5;
+
+}
+
+#right:hover{
+	opacity: 1;
+}
+
+#middle:hover{
+	opacity: 1;
+}
+
+#left:hover{
+	opacity: 1;
+}
+</style>
+
+</head>
+
+<body> 
+<div id="bar" style="with:100%;">
+ 	Here are my albums. You can add one here: <a href="/album"> create </a>.
+ 	You can delete on here: <a href="/delete"> delete </a>. You can go home: <a href="/home"> home </a>
+	</div>
+
+
+{{#each model.data as |music|}}
+<div id="left" class= "col-md-4">
+<div style="margin-top: 80%;">	
+		{{music.albumName}}
+		<br>
+</div>
+</div>
+
+{{/each}}
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+	{{outlet}}
